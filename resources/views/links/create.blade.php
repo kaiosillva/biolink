@@ -19,6 +19,7 @@
                 <span>{{ $message }}</span>
             @enderror
         </div>
+        <a href="{{ route('dashboard') }}">Cancelar</a>
         <br>
         <button>Salvar</button>
     </form>
