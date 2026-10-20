@@ -1,6 +1,7 @@
 <div>
     <h1>Dashboard</h1>
     <h2>{{ auth()->user()->name }} :: {{ auth()->user()->id }}</h2>
+    <a href="{{ route('profile') }}">Atualizar Profile</a>
     @if ($message = session()->get('message'))
         <div>{{ $message }}</div>
     @endif
@@ -26,7 +27,8 @@
                 @endunless
                 <a href="{{ route('links.edit', $link) }}">{{ $link->id }}.{{ $link->name }}</a>
 
-                <form action="{{ route('link.destroy', $link) }}" method="post" onsubmit="return confirm('Tem Certeza?')">
+                <form action="{{ route('link.destroy', $link) }}" method="post"
+                    onsubmit="return confirm('Tem Certeza?')">
                     @csrf
                     @method('DELETE')
 

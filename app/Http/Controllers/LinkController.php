@@ -34,6 +34,7 @@ class LinkController extends Controller
      */
     public function edit(Link $link)
     {
+
         return view('links.edit', compact('link'));
     }
 
@@ -70,7 +71,6 @@ class LinkController extends Controller
 
     public function down(Link $link)
     {
-
         $link->moveDown();
 
         return back();
